@@ -1,0 +1,10 @@
+Change Net Name : Old Net Name=D+ New Net Name=D_P
+Change Net Name : Old Net Name=D- New Net Name=D_N
+Added Differential Pair: Name=D
+Added Member To Class: ClassName=My_esp Member=Component C3 100nF
+Added Member To Class: ClassName=My_esp Member=Component C5 100nF
+Added Member To Class: ClassName=My_esp Member=Component C7 100nF
+Added Member To Class: ClassName=My_esp Member=Component C9 22uF
+Added Member To Class: ClassName=My_esp Member=Component C11 100nF
+Added Rule: Name=Schematic Routing Via Style
+Added Rule: Name=Schematic Width Constraint
