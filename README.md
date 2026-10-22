@@ -1,88 +1,88 @@
-# ESP32 - Custom Development Board
+# ESP32 - Board phát triển tự thiết kế
 
-## Acknowledgement
+## Lời cảm ơn
 
-Special thanks to **Mr. Vu Duc Tuan** for generously sponsoring the electronic components and PCB fabrication costs for this project. This board would not have been possible without his support.
-
----
-
-## 1. Overview
-
-This is a custom ESP32 development board designed entirely from scratch using Altium Designer. The board is built around the ESP32-WROOM-32E module and includes all the necessary circuitry for USB programming, power regulation, and GPIO access — similar in concept to commercial dev boards but fully hand-designed.
+Xin gửi lời cảm ơn đặc biệt tới **ông Vũ Đức Tuấn** đã hào phóng tài trợ linh kiện điện tử và chi phí gia công PCB cho dự án này. Board này sẽ không thể hoàn thành nếu không có sự hỗ trợ của ông.
 
 ---
 
-## 2. Features
+## 1. Tổng quan
 
-- ESP32-WROOM-32E (4 MB flash) as the main microcontroller
-- USB Type-C connector for power supply and firmware programming
-- CP2102 USB-to-Serial bridge for communication between PC and ESP32
-- Auto-reset circuit using SS8050 NPN transistors controlled via DTR/RTS signals
-- AMS1117-3.3 LDO voltage regulator (5V to 3.3V, up to 1A)
-- Power input selection via jumper (USB VBUS or external 5V)
-- Power indicator LED (red) and user-programmable LED (green, GPIO18)
-- Reset button (EN) and Boot/Flash button (GPIO0)
-- Two 17-pin expansion headers exposing all available GPIO pins
-- 4-layer PCB with dedicated GND and PWR internal planes
+Đây là một board phát triển ESP32 được thiết kế hoàn toàn từ đầu bằng Altium Designer. Board sử dụng module ESP32-WROOM-32E làm trung tâm và có đầy đủ các mạch cần thiết cho việc nạp chương trình qua USB, ổn áp nguồn và truy cập GPIO. Về ý tưởng, board tương tự các board phát triển thương mại nhưng được thiết kế thủ công hoàn toàn.
 
 ---
 
-## 3. Schematic
+## 2. Tính năng
 
-![Schematic](Picture/My_esp.jpg)
-
----
-
-## 4. PCB Layers
-
-### Top Layer
-
-![Top Layer](Picture/Top_layer.PNG)
-
-### Bottom Layer
-
-![Bottom Layer](Picture/Bottom_layer.PNG)
-
-### GND Plane (Inner Layer 1)
-
-![GND Plane](Picture/GND.PNG)
-
-### PWR Plane (Inner Layer 2)
-
-![PWR Plane](Picture/PWR.PNG)
-
-### 3D View (Altium Designer)
-
-![3D View](Picture/3D_View.PNG)
-
-### Assembled Product
-
-![Assembled Product](Picture/product.jpg)
+- Module ESP32-WROOM-32E (flash 4 MB) làm vi điều khiển chính
+- Cổng USB Type-C để cấp nguồn và nạp firmware
+- Chip chuyển đổi USB-to-Serial CP2102 để giao tiếp giữa máy tính và ESP32
+- Mạch tự động reset dùng transistor NPN SS8050, điều khiển bằng tín hiệu DTR/RTS
+- IC ổn áp LDO AMS1117-3.3 (hạ 5V xuống 3.3V, dòng tối đa 1A)
+- Chọn nguồn đầu vào bằng jumper (USB VBUS hoặc nguồn 5V ngoài)
+- LED báo nguồn (màu đỏ) và LED người dùng có thể lập trình (màu xanh lá, GPIO18)
+- Nút Reset (EN) và nút Boot/Flash (GPIO0)
+- Hai hàng header mở rộng 17 chân, đưa ra toàn bộ các chân GPIO khả dụng
+- PCB 4 lớp, có hai lớp trong dành riêng cho GND và nguồn (PWR)
 
 ---
 
-## 5. Project Files
+## 3. Sơ đồ nguyên lý
 
-| File / Folder | Description |
+![Sơ đồ nguyên lý](Picture/My_esp.jpg)
+
+---
+
+## 4. Các lớp PCB
+
+### Lớp trên (Top Layer)
+
+![Lớp trên](Picture/Top_layer.PNG)
+
+### Lớp dưới (Bottom Layer)
+
+![Lớp dưới](Picture/Bottom_layer.PNG)
+
+### Lớp GND (Lớp trong 1)
+
+![Lớp GND](Picture/GND.PNG)
+
+### Lớp nguồn PWR (Lớp trong 2)
+
+![Lớp nguồn PWR](Picture/PWR.PNG)
+
+### Hình 3D (Altium Designer)
+
+![Hình 3D](Picture/3D_View.PNG)
+
+### Sản phẩm sau khi lắp ráp
+
+![Sản phẩm hoàn thiện](Picture/product.jpg)
+
+---
+
+## 5. Tệp dự án
+
+| Tệp / Thư mục | Mô tả |
 |---|---|
-| `My_esp.SchDoc` | Altium Designer schematic source file |
-| `My_esp.PcbDoc` | Altium Designer PCB layout source file |
-| `My_own_esp32(2).PrjPcb` | Altium Designer project file |
-| `My_own_esp32(2).OutJob` | Output job configuration (Gerber, drill files, etc.) |
-| `Project Outputs for My_own_esp32(2)/` | Generated Gerber and drill files ready for fabrication |
-| `PDNAnalyzer_Output/` | Power Delivery Network analysis results |
-| `Picture/` | Schematic and PCB layer images |
+| `My_esp.SchDoc` | Tệp nguồn sơ đồ nguyên lý (Altium Designer) |
+| `My_esp.PcbDoc` | Tệp nguồn layout PCB (Altium Designer) |
+| `My_own_esp32(2).PrjPcb` | Tệp dự án Altium Designer |
+| `My_own_esp32(2).OutJob` | Cấu hình Output Job (xuất Gerber, file khoan, v.v.) |
+| `Project Outputs for My_own_esp32(2)/` | Các file Gerber và file khoan đã xuất, sẵn sàng gửi đi gia công |
+| `PDNAnalyzer_Output/` | Kết quả phân tích mạng phân phối nguồn (Power Delivery Network) |
+| `Picture/` | Hình ảnh sơ đồ nguyên lý và các lớp PCB |
 
 ---
 
-## 6. Tools Used
+## 6. Công cụ sử dụng
 
-- **Altium Designer** — Schematic capture, PCB layout, and Gerber generation
+- **Altium Designer** — Vẽ sơ đồ nguyên lý, layout PCB và xuất file Gerber
 
 ---
 
-## 7. Lessons Learned
+## 7. Bài học rút ra
 
-- **Reading component datasheets** — Learned to extract key application circuits, recommended footprints, and electrical characteristics directly from datasheets for components such as the ESP32-WROOM-32E, CP2102, AMS1117, and SS8050.
-- **Using PDN Analyzer** — Gained hands-on experience running Power Delivery Network analysis in Altium Designer to verify that power traces and planes can supply sufficient current with acceptable voltage drop across the board.
-- **Copper pour with P+G (Polygon Pour)** — Learned to use Altium's polygon pour feature to flood copper on power and ground nets, improving current capacity, reducing impedance on power rails, and providing better EMI shielding across the board.
+- **Đọc datasheet linh kiện** — Học cách lấy trực tiếp từ datasheet các mạch ứng dụng mẫu, footprint khuyến nghị và đặc tính điện của các linh kiện như ESP32-WROOM-32E, CP2102, AMS1117 và SS8050.
+- **Sử dụng PDN Analyzer** — Có kinh nghiệm thực tế chạy phân tích mạng phân phối nguồn (PDN) trong Altium Designer để kiểm chứng rằng các đường mạch và lớp nguồn cấp đủ dòng với mức sụt áp chấp nhận được trên toàn board.
+- **Đổ đồng với P+G (Polygon Pour)** — Học cách dùng tính năng polygon pour của Altium để phủ đồng cho các net nguồn và GND, giúp tăng khả năng chịu dòng, giảm trở kháng trên đường nguồn và cải thiện khả năng che chắn nhiễu điện từ (EMI) cho toàn board.
